@@ -13,4 +13,7 @@
            :main-opts ["-m" "export"]}
   :clerk {:extra-paths ["notebooks"]
           :extra-deps {io.github.nextjournal/clerk {:mvn/version "0.18.1158"}}
-          :main-opts ["-e" "(require '[nextjournal.clerk :as clerk])(clerk/serve! {:watch-paths [\"notebooks\" \"src\"] :browse true})(clerk/show! \"notebooks/figures.clj\")@(promise)"]}}}
+          :main-opts ["-e" "(require '[nextjournal.clerk :as clerk])(clerk/serve! {:watch-paths [\"notebooks\" \"src\"] :browse true})(clerk/show! \"notebooks/figures.clj\")@(promise)"]}
+  :build {:extra-paths ["notebooks"]
+          :extra-deps {io.github.nextjournal/clerk {:mvn/version "0.18.1158"}}
+          :main-opts ["-e" "(require '[nextjournal.clerk :as clerk])(clerk/build! {:paths [\"notebooks/fundamentals.clj\" \"notebooks/figures.clj\"] :index \"notebooks/figures.clj\" :out-path \"build\"})"]}}}
